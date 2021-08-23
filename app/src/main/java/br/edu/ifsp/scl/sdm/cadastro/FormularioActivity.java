@@ -1,32 +1,40 @@
 package br.edu.ifsp.scl.sdm.cadastro;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.Activity;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.text.InputType;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 
-public class FormularioActivity extends AppCompatActivity implements View.OnClickListener {
-    private EditText textoEt;
-    private Button cliqueAquiBt;
-    private Spinner opcoesSp;
-    private CheckBox selecionadoCb;
-    private RadioButton radio1Rb;
+import com.google.android.material.textfield.TextInputLayout;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+public class FormularioActivity extends Activity {
+
+    // Lista de Estados (UF)
+    private static final String[] ESTADOS = new String[] {
+            "Acre", "Alagoas", "Amapá", "Amazonas", "Bahia", "Ceará","Distrito Federal","Espírito Santo","Goiás","Maranhão","Mato Grosso","Mato Grosso do Sul","Minas Gerais","Pará","Paraíba","Paraná","Pernambuco","Piauí","Rio de Janeiro","Rio Grande do Norte","rio Grande do Sul","Rondônia","Roraima","Santa Catarina","São Paulo","Sergipe","Tocantins"
+    };
+
+
+    protected void onCreate(Bundle iclicle) {
+        super.onCreate(iclicle);
         setContentView(R.layout.activity_formulario);
 
+        //Completa lista de Estados (UFs)
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_dropdown_item_1line, ESTADOS);
+        AutoCompleteTextView autoCompleteTextView;
+        TextInputLayout textInputLayout = findViewById(R.id.cboEstados);
+        autoCompleteTextView = (AutoCompleteTextView) textInputLayout.getEditText();
+        autoCompleteTextView.setAdapter(adapter);
+        autoCompleteTextView.setInputType(InputType.TYPE_NULL);
+
+    }
+
+
+}
+
+/*
         textoEt = findViewById(R.id.textoEt);
         textoEt.addTextChangedListener(new TextWatcher() {
             @Override
@@ -85,5 +93,4 @@ public class FormularioActivity extends AppCompatActivity implements View.OnClic
         sb.append('\n');
 
         Toast.makeText(this, sb.toString(), Toast.LENGTH_SHORT).show();
-    }
-}
+*/

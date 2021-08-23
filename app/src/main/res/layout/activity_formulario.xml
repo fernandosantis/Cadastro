@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     tools:context=".FormularioActivity">
+    >
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
     <androidx.constraintlayout.widget.Guideline
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/guiStart"
         app:layout_constraintGuide_begin="16dp"
-        android:orientation="vertical"/>
+        android:orientation="vertical" />
+
     <androidx.constraintlayout.widget.Guideline
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,11 +31,16 @@
         android:orientation="vertical"/>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textField"
-        android:layout_width="match_parent"
+        android:id="@+id/txtNomeCompleto"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_height="wrap_content"
         android:hint="Nome"
-        >
+        android:layout_width="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@id/guiEnd"
+        app:layout_constraintStart_toStartOf="@id/guiStart"
+        app:layout_constraintTop_toTopOf="parent"
+        app:startIconDrawable="@drawable/person_24dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -37,4 +51,159 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtTelefone"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Telefone"
+        app:layout_constraintEnd_toEndOf="@id/guiEnd"
+        app:layout_constraintStart_toStartOf="@id/guiStart"
+        app:layout_constraintTop_toBottomOf="@id/txtNomeCompleto"
+        app:startIconDrawable="@drawable/phone_24dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtEmail"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="E-mail"
+        app:layout_constraintEnd_toEndOf="@id/guiEnd"
+        app:layout_constraintStart_toStartOf="@id/guiStart"
+        app:layout_constraintTop_toBottomOf="@id/txtTelefone"
+        app:startIconDrawable="@drawable/email_24dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/chkMailList"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="Ingressar na lista de e-mails?"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/guiEnd"
+        app:layout_constraintStart_toStartOf="@id/guiStart"
+        app:layout_constraintTop_toBottomOf="@id/txtEmail" />
+
+    <TextView
+        android:id="@+id/lblSexo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sexo"
+        app:layout_constraintStart_toStartOf="@id/guiStart"
+        app:layout_constraintTop_toTopOf="@id/optgSexo"
+        app:layout_constraintBottom_toBottomOf="@id/optgSexo"
+        />
+
+
+    <RadioGroup
+        android:id="@+id/optgSexo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="32dp"
+        app:layout_constraintEnd_toEndOf="@id/guiEnd"
+        app:layout_constraintStart_toEndOf="@id/lblSexo"
+        app:layout_constraintTop_toBottomOf="@id/chkMailList">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/optSexoFem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:layout_weight="1"
+            android:text="Feminino" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/optSexoMasc"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Masculino" />
+
+
+
+    </RadioGroup>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cboEstados"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Estado"
+        app:layout_constraintEnd_toEndOf="@id/guiEnd"
+        app:layout_constraintStart_toStartOf="@id/guiStart"
+        app:layout_constraintTop_toBottomOf="@id/optgSexo"
+        app:startIconDrawable="@drawable/place_24dp">
+
+        <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtCidade"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="Município"
+        app:layout_constraintEnd_toEndOf="@id/guiEnd"
+        app:layout_constraintStart_toStartOf="@id/guiStart"
+        app:layout_constraintTop_toBottomOf="@id/cboEstados"
+        app:startIconDrawable="@drawable/place_24dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_margin="8dp"
+        android:id="@+id/btnLimpar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Limpar"
+        style="@style/Widget.MaterialComponents.Button"
+        app:layout_constraintTop_toBottomOf="@id/txtCidade"
+        app:layout_constraintStart_toStartOf="@id/guiStart"
+        />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSalvar"
+        android:layout_margin="8dp"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salvar"
+        style="@style/Widget.MaterialComponents.Button"
+        app:layout_constraintTop_toBottomOf="@id/txtCidade"
+        app:layout_constraintEnd_toEndOf="@id/guiEnd"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
