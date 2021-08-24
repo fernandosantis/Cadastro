@@ -34,7 +34,7 @@
         android:id="@+id/txtNomeCompleto"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_height="wrap_content"
-        android:hint="Nome"
+        android:hint="@string/name"
         android:layout_width="0dp"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="@id/guiEnd"
@@ -57,7 +57,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="Telefone"
+        android:hint="@string/phone"
         app:layout_constraintEnd_toEndOf="@id/guiEnd"
         app:layout_constraintStart_toStartOf="@id/guiStart"
         app:layout_constraintTop_toBottomOf="@id/txtNomeCompleto"
@@ -78,7 +78,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:hint="E-mail"
+        android:hint="@string/email"
         app:layout_constraintEnd_toEndOf="@id/guiEnd"
         app:layout_constraintStart_toStartOf="@id/guiStart"
         app:layout_constraintTop_toBottomOf="@id/txtTelefone"
@@ -98,7 +98,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:checked="true"
-        android:text="Ingressar na lista de e-mails?"
+        android:text="@string/ingress_maillist"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@id/guiEnd"
         app:layout_constraintStart_toStartOf="@id/guiStart"
@@ -108,7 +108,7 @@
         android:id="@+id/lblSexo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sexo"
+        android:text="@string/gender"
         app:layout_constraintStart_toStartOf="@id/guiStart"
         app:layout_constraintTop_toTopOf="@id/optgSexo"
         app:layout_constraintBottom_toBottomOf="@id/optgSexo"
@@ -131,14 +131,14 @@
             android:layout_height="wrap_content"
             android:checked="true"
             android:layout_weight="1"
-            android:text="Feminino" />
+            android:text="@string/female" />
 
         <com.google.android.material.radiobutton.MaterialRadioButton
             android:id="@+id/optSexoMasc"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Masculino" />
+            android:text="@string/male" />
 
 
 
@@ -150,7 +150,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Estado"
+        android:hint="@string/state"
         app:layout_constraintEnd_toEndOf="@id/guiEnd"
         app:layout_constraintStart_toStartOf="@id/guiStart"
         app:layout_constraintTop_toBottomOf="@id/optgSexo"
@@ -170,7 +170,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:hint="Município"
+        android:hint="@string/city"
         app:layout_constraintEnd_toEndOf="@id/guiEnd"
         app:layout_constraintStart_toStartOf="@id/guiStart"
         app:layout_constraintTop_toBottomOf="@id/cboEstados"
@@ -189,7 +189,7 @@
         android:id="@+id/btnLimpar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Limpar"
+        android:text="@string/wipe"
         style="@style/Widget.MaterialComponents.Button"
         app:layout_constraintTop_toBottomOf="@id/txtCidade"
         app:layout_constraintStart_toStartOf="@id/guiStart"
@@ -200,7 +200,7 @@
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Salvar"
+        android:text="@string/save"
         style="@style/Widget.MaterialComponents.Button"
         app:layout_constraintTop_toBottomOf="@id/txtCidade"
         app:layout_constraintEnd_toEndOf="@id/guiEnd"

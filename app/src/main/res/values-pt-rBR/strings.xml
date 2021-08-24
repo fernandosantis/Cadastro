@@ -1,9 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Cadastro</string>
     <string name="name">Nome</string>
     <string name="phone">Telefone</string>
     <string name="email" translatable="false">E-mail</string>
-    <string name="ingress_maillist">Ingressar na lista de e-mails?</string>
+    <string name="ingress_maillist">Ingressar na lista de e-mails</string>
     <string name="gender">Sexo</string>
     <string name="female">Feminino</string>
     <string name="male">Masculino</string>

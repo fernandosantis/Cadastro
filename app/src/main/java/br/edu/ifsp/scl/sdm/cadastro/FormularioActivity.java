@@ -95,19 +95,19 @@ public class FormularioActivity extends AppCompatActivity implements View.OnClic
         StringBuilder sb = new StringBuilder();
         if (view == btnSalvar) {
             // Nome, Telefone e Email
-            sb.append("Nome: " + txtNomeCompleto.getEditText().getText().toString());
+            sb.append(getString(R.string.name)+": " + txtNomeCompleto.getEditText().getText().toString());
             sb.append('\n');
             String sexo;
-            if (optSexoFem.isChecked()) { sexo = "Feminino";} else { sexo = "Masculino";};
-            sb.append("Sexo: " + sexo);
+            if (optSexoFem.isChecked()) { sexo = getString(R.string.female);} else { sexo = getString(R.string.male);};
+            sb.append(getString(R.string.gender) +": " + sexo);
             sb.append('\n');
-            sb.append("Telefone: " + txtTelefone.getEditText().getText().toString());
+            sb.append(getString(R.string.phone)+": " + txtTelefone.getEditText().getText().toString());
             sb.append('\n');
-            sb.append("Email: " + txtEmail.getEditText().getText().toString());
+            sb.append(getString(R.string.email)+": " + txtEmail.getEditText().getText().toString());
             // Java não aceita atribuição direta : String mailList = if(chkMailList.isChecked()) {"Enviar E-mails"} else {"Não enviar E-mails"};
             String mailList;
-            mailList = "Enviar E-mails";
-            if(!chkMailList.isChecked()) {mailList = "Não " + mailList;};
+            mailList = getString(R.string.send_mails);
+            if(!chkMailList.isChecked()) {mailList = getString(R.string.no) + " " + mailList;};
             sb.append('\n');
             sb.append(mailList);
             sb.append('\n');
@@ -127,7 +127,7 @@ public class FormularioActivity extends AppCompatActivity implements View.OnClic
 
         } else {
             limpaForm();
-            sb.append("Formulário Redefinido");
+            sb.append(getString(R.string.reset_form));
             sb.append('\n');
         }
         Toast.makeText(this, sb.toString(), Toast.LENGTH_SHORT).show();

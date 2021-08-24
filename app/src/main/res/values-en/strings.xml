@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Base</string>
+    <string name="email">E-mail</string>
+    <string name="send_mails">Send E-mails</string>
+    <string name="state">State</string>
+    <string name="female">Female</string>
+    <string name="reset_form">Form Reseted</string>
+    <string name="ingress_maillist">Submit to Mail List</string>
+    <string name="wipe">Wipe</string>
+    <string name="male">Male</string>
+    <string name="city">City</string>
+    <string name="no">No</string>
+    <string name="name">Name</string>
+    <string name="save">Save</string>
+    <string name="gender">Gender</string>
+    <string name="phone">Phone</string>
+</resources>
